@@ -1,32 +1,3 @@
-
-// let body = document.querySelector("body")
-// let divid = document.getElementById("divid")
-// let Black = document.getElementById("Black")
-// let footer = document.getElementById("main")
-// let table = document.getElementById("table")
-// let container_2 = document.getElementById("container_2")
-// let div = document.getElementById("div")
-// Black.addEventListener("click", function() {
-//     body.style.color = "white"
-//     body.style.backgroundColor = "black"
-//     divid.style.borderColor = "white"
-//     footer.style.backgroundColor = "white"
-//     main.style.borderColor = "white"
-//     table.style.borderColor = "white"
-// })
-
-
-// let btn2 = document.getElementById("btn2")
-// btn2.addEventListener("click", function() {
-//     body.style.backgroundColor = "white"
-//     divid.style.borderColor = "black"
-//     footer.style.backgroundColor = "black"
-//      main.style.borderColor = "black"
-//     table.style.borderColor = "black"
-      
-// })
-
-// Переключение темы
 document.getElementById("Black").addEventListener("click", () => {
     document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
@@ -207,3 +178,22 @@ form.addEventListener("submit", function (event) {
            openModal();
        });
    });
+
+     function openQRModal(carName, price) {
+            document.getElementById("qrModal").style.display = "block";
+            document.getElementById("carName").innerText = `Вы покупаете: ${carName} за ${price}₸`;
+            const qrData = `KaspiPay:${carName}:${price}`;
+            const qrUrl = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=${encodeURIComponent(qrData)}`;
+            document.getElementById("qrImage").src = 'https://f.nodacdn.net/421362';
+            sessionStorage.setItem("selectedCar", carName);
+        }
+
+        function closeQRModal() {
+            document.getElementById("qrModal").style.display = "none";
+        }
+
+        function confirmPayment() {
+            const car = sessionStorage.getItem("selectedCar");
+            alert(`Оплата за ${car} подтверждена!`);
+            closeQRModal();
+        }
