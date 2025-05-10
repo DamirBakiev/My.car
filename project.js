@@ -28,13 +28,13 @@ document.querySelectorAll(".cart button").forEach((btn, index) => {
     });
 });
 
-// Обработка меню (пример, если планируется меню по кнопке)
+
 const menuToggle = document.getElementById("menu-brower");
 menuToggle.addEventListener("click", () => {
     menuToggle.classList.toggle("open");
 });
 
-// Валидация входа (если добавите форму login)
+
 function validateLoginForm() {
     const username = document.getElementById("username");
     const password = document.getElementById("password");
@@ -109,7 +109,7 @@ form.addEventListener("submit", function (event) {
         return;
     }
 
-    // Здесь можно отправить данные на сервер (в будущем)
+
     console.log("Отправка данных:", { name, phone, message });
 
     statusText.textContent = "Спасибо! Ваше сообщение отправлено.";
@@ -134,13 +134,13 @@ form.addEventListener("submit", function (event) {
         return;
     }
 
-    // Получаем текущие заявки из localStorage
+   
     let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
 
-    // Добавляем новую заявку
+    
     feedbacks.push({ name, phone, message, time: new Date().toLocaleString() });
 
-    // Сохраняем обратно в localStorage
+  
     localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
 
     statusText.textContent = "Спасибо! Ваше сообщение сохранено.";
@@ -157,7 +157,7 @@ form.addEventListener("submit", function (event) {
        modal.style.display = "block";
    }
 
-   closeBtn.onclick = function () {
+   closeBtn.onclick = 'click', function () {
        modal.style.display = "none";
    };
 
