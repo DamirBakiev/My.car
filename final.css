@@ -1,23 +1,43 @@
-/* Общие стили */
+
 body {
     font-family: 'Audiowide', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, #f91446, #203a43, #006e74);
     color: #333;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; 
 }
+
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
 
 h1, h2, h3, h4, h5 {
     text-align: center;
     margin: 10px 0;
+    color:  #203a43, #236262;
 }
 
 p {
     padding: 0 15px;
     line-height: 1.5;
+    color: #eee;
 }
 
-/* Меню */
+
 .Open_menu {
     display: flex;
     justify-content: space-between;
@@ -45,7 +65,6 @@ p {
     background-color: #000;
 }
 
-/* Основной контейнер для карточек */
 .container, .container_2 {
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +111,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Таблица */
 #table {
     overflow-x: auto;
     padding: 20px;
@@ -110,7 +128,6 @@ th, td {
     border: 1px solid #ddd;
 }
 
-/* Футер */
 footer {
     background-color: #222;
     color: white;
@@ -154,7 +171,6 @@ footer {
     border: 1px solid #ccc;
 }
 
-/* Модальное окно */
 .modal {
     display: none;
     position: fixed;
@@ -182,7 +198,6 @@ footer {
     cursor: pointer;
 }
 
-/* Адаптивность */
 @media screen and (max-width: 768px) {
     .Open_menu {
         flex-direction: column;
@@ -200,5 +215,10 @@ footer {
     .footer-contacts {
         flex-direction: column;
         align-items: center;
+    }
+
+    img {
+        width: 100%;
+        font-size: 100% ;
     }
 }
