@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<style>
+      body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+
+  input, label{
+    display: block;
+  }
+</style>
+<body>
+  <h2>Заполните поля</h2>
+  <label for="text"></label>
+  <input type="text" id="username" placeholder="Имя пользователя">
+  <label for="text"></label>
+  <input type="text" id="phone" placeholder="Номер телефона" translate="+7**********">
+  <label for="text"></label>
+  <input type="password" id="password" placeholder="Пароль">
+  <button onclick="register()">Отправить</button>
+
+  <script>
+    function register() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+
+      if (!username || !password) {
+        alert("Пожалуйста, заполните все поля");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+      if (users[username]) {
+        alert("Пользователь уже зарегистрирован!");
+        return;
+      }
+
+      users[username] = password;
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Регистрация прошла успешно! Теперь войдите.");
+      window.location.href = "login.page.html";
+    }
+  </script>
+</body>
+</html>
