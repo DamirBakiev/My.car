@@ -1,0 +1,204 @@
+/* Общие стили */
+body {
+    font-family: 'Audiowide', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+p {
+    padding: 0 15px;
+    line-height: 1.5;
+}
+
+/* Меню */
+.Open_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.Open_menu img {
+    height: 30px;
+    margin: 5px;
+}
+
+.Open_menu button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.Open_menu button:hover {
+    background-color: #000;
+}
+
+/* Основной контейнер для карточек */
+.container, .container_2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cart, .item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.cart:hover {
+    transform: scale(1.05);
+}
+
+.cart img, .item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Таблица */
+#table {
+    overflow-x: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Футер */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer-contacts img {
+    height: 30px;
+}
+
+/* Форма обратной связи */
+.feedback-container {
+    padding: 20px;
+    background-color: #eee;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.feedback-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-container label {
+    margin-top: 10px;
+}
+
+.feedback-container input,
+.feedback-container textarea {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.close-button {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    .Open_menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart, .item {
+        width: 90%;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .footer-contacts {
+        flex-direction: column;
+        align-items: center;
+    }
+}

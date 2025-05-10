@@ -1,0 +1,22 @@
+.menu-brover_header{
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: azure;
+}
+
+.close-brower{
+    display: flex;
+    justify-content: flex-end;
+}
+.img-2{
+    height: 20px;
+    display: flex;
+
+} 
+
+body{
+    background-color: azure;
+}

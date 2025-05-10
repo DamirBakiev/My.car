@@ -1,0 +1,126 @@
+footer {
+    background-color: black;
+}
+.footer-contacts {
+    display: flex;
+}
+
+footer img{
+    height: 50px;
+}
+
+/* Общий стиль */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #f0f0f0;
+  }
+  
+  header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #00c3ff;
+    box-shadow: 0 4px 20px rgba(0, 195, 255, 0.3);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px #00c3ff;
+  }
+  
+  #filter-bar {
+    margin-top: 15px;
+  }
+  
+  #brand-filter {
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
+    background: #1a1a1a;
+    color: #fff;
+    box-shadow: 0 0 10px #00c3ff;
+    cursor: pointer;
+  }
+  
+  /* Карточка машины */
+  .car-card {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 30px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 195, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .car-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 35px rgba(0, 195, 255, 0.4);
+  }
+  
+  .car-card h2 {
+    text-align: center;
+    color: #00c3ff;
+    text-shadow: 0 0 5px #00c3ff;
+  }
+  
+  .swiper {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.3);
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    display: block;
+  }
+  
+  /* Характеристики */
+  .car-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    text-align: center;
+  }
+  
+  .car-specs li {
+    margin: 8px 0;
+    font-weight: 500;
+  }
+  
+  /* Кнопка */
+  .buy-button {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #00c3ff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00c3ff;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .buy-button:hover {
+    background: #00a0cc;
+    transform: scale(1.05);
+  }
+  
+  /* Футер */
+  footer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 2px solid #00c3ff;
+    box-shadow: 0 -4px 20px rgba(0, 195, 255, 0.3);
+  }
+  
