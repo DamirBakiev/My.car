@@ -17,6 +17,10 @@
 
 } 
 
-body{
-    background-color: azure;
+body {
+  background-color: azure;
+  background-image: url('https://avatars.mds.yandex.net/i?id=0ff4756896cdd90d95097cc8e34730f79d0e14f5-5242896-images-thumbs&n=13');
+  background-size: 2500px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
