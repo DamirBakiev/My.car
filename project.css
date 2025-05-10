@@ -22,7 +22,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #222;
+    background-color: #00ffea;
     padding: 10px 20px;
     flex-wrap: wrap;
 }
