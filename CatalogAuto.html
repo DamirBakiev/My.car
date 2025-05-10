@@ -36,9 +36,9 @@
         <li>Коробка: автомат</li>
         <li>Привод: задний</li>
         <li>Разгон 0–100 км/ч: 3.9 сек</li>
-        <li>Цена: 48 500 000 тг</li>
+        <p  class="price">Цена: 48 500 000 тг</p>
       </ul>
-      <button class="buy-button">Купить</button>
+      <button class="buy-button" onclick="openQRModal('BMW M4', '48500000')">Купить</button>
     </section>
 
     <!-- BMW M8 -->
@@ -62,9 +62,9 @@
         <li>Коробка: автомат</li>
         <li>Привод: полный</li>
         <li>Макс. скорость: 305 км/ч</li>
-        <li>Цена: 87 000 000 тг</li>
+        <li class="price">Цена: 87 000 000 тг</li>
       </ul>
-      <button class="buy-button">Купить</button>
+      <button class="buy-button" onclick="openQRModal('BMW M8', '87000000тг')">Купить</button>
     </section>
 
     <!-- Mercedes-AMG GT -->
@@ -87,9 +87,9 @@
         <li>Коробка: автомат</li>
         <li>Привод: задний</li>
         <li>Разгон 0–100 км/ч: 3.7 сек</li>
-        <li>цена: 150 000 000 ₸</li>
+        <li class="price">цена: 150 000 000 ₸</li>
       </ul>
-      <button class="buy-button">Купить</button>
+      <button class="buy-button" onclick="openQRModal('Mercedes-AMG GT', '150 000 000')">Купить</button>
     </section>
 
     <!-- McLaren 720S -->
@@ -113,9 +113,9 @@
         <li>Коробка: автомат</li>
         <li>Привод: задний</li>
         <li>Макс. скорость: 341 км/ч</li>
-        <li>Цена: 124 000 000 ₸</li>
+        <li class="price">Цена: 124 000 000 ₸</li>
       </ul>
-      <button class="buy-button">Купить</button>
+      <button class="buy-button"onclick="openQRModal('McLaren 720S', '124 000 000')">Купить</button>
     </section>
 
     <!-- Aston Martin Vantage -->
@@ -139,9 +139,9 @@
         <li>Коробка: автомат</li>
         <li>Привод: задний</li>
         <li>Разгон 0–100 км/ч: 3.6 сек</li>
-        <Li>Цена: 89 090 000 ₸</Li>
+        <Li class="price">Цена: 89 090 000 ₸</Li>
       </ul>
-      <button class="buy-button">Купить</button>
+      <button class="buy-button" onclick="openQRModal('Aston Martin Vantage', '89 090 000')">Купить</button>
 
       <section class="car-card">
         <h2>Porsche 911 Turbo S</h2>
@@ -163,9 +163,9 @@
           <li>Коробка: автомат</li>
           <li>Привод: полный</li>
           <li>Разгон 0–100 км/ч: 2.7 сек</li>
-          <li>Цена: 101 000 000 тг</li>
+          <li class="price">Цена: 101 000 000 тг</li>
         </ul>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="openQRModal('Porsche 911 Turbo S', '101 000 000')">Купить</button>
       </section>
   
       <!-- Chevrolet Corvette C8 -->
@@ -189,9 +189,9 @@
           <li>Коробка: автомат</li>
           <li>Привод: задний</li>
           <li>Разгон 0–100 км/ч: 2.9 сек</li>
-          <li>Цена: 49 800 000 ₸</li>
+          <li class="price">Цена: 49 800 000 ₸</li>
         </ul>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="openQRModal('Chevrolet Corvette C8', '49 800 000')">Купить</button>
       </section>
   
       <!-- Dodge Challenger SRT Hellcat -->
@@ -215,9 +215,9 @@
           <li>Коробка: автомат</li>
           <li>Привод: задний</li>
           <li>Разгон 0–100 км/ч: 3.6 сек</li>
-          <li>Цена: 17 000 000 ₸</li>
+          <li class="price">Цена: 17 000 000 ₸</li>
         </ul>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="openQRModal('Dodge Challenger SRT Hellcat', '17 000 000')">Купить</button>
       </section>
   
       <!-- Nissan Skyline GT-R R34 -->
@@ -241,9 +241,22 @@
           <li>Коробка: механика</li>
           <li>Привод: полный</li>
           <li>Разгон 0–100 км/ч: 4.9 сек</li>
-          <li>Цена: 60 000 000 тг</li>
+          <li class="price">Цена: 60 000 000 тг</li>
         </ul>
-        <button class="buy-button">Купить</button>
+        <button class="buy-button" onclick="openQRModal('Nissan Skyline GT-R R34', '60 000 000')">Купить</button>
+
+         <!-- Модальное окно QR Kaspi -->
+    <div id="qrModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeQRModal()">&times;</span>
+            <h3>Оплатите через Kaspi QR</h3>
+            <p id="carName"></p>
+            <img id="qrImage" src="https://f.nodacdn.net/421362" alt="Kaspi QR" style="width:350px;height:550px;">
+            <p>После оплаты нажмите "Я оплатил"</p>
+            <button onclick="confirmPayment()">Я оплатил</button>
+        </div>
+    </div>
+
     </section>
   </main>
 
@@ -292,7 +305,7 @@
   buyButtons.forEach(button => {
     button.addEventListener('click', () => {
       const carTitle = button.closest('.car-card').querySelector('h2').textContent;
-      alert(`Вы успешно оформили покупку: ${carTitle}`);
+      // alert(`Вы успешно оформили покупку: ${carTitle}`);
     });
   });
 
@@ -311,7 +324,24 @@
       });
     });
   }
+   function openQRModal(carName, price) {
+            document.getElementById("qrModal").style.display = "block";
+            document.getElementById("carName").innerText = `Вы покупаете: ${carName} за ${price}₸`;
+            const qrData = `KaspiPay:${carName}:${price}`;
+            const qrUrl = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=${encodeURIComponent(qrData)}`;
+            document.getElementById("qrImage").src = 'https://f.nodacdn.net/421362';
+            sessionStorage.setItem("selectedCar", carName);
+        }
 
+        function closeQRModal() {
+            document.getElementById("qrModal").style.display = "none";
+        }
+
+        function confirmPayment() {
+            const car = sessionStorage.getItem("selectedCar");
+            alert(`Оплата за ${car} подтверждена!`);
+            closeQRModal();
+        }
 
   </script>
 </body>
