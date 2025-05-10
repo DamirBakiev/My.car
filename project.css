@@ -1,204 +1,155 @@
-/* Общие стили */
 body {
-    font-family: 'Audiowide', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f0f0f0
 }
 
-h1, h2, h3, h4, h5 {
-    text-align: center;
-    margin: 10px 0;
-}
-
-p {
-    padding: 0 15px;
-    line-height: 1.5;
-}
-
-/* Меню */
-.Open_menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #00ffea;
-    padding: 10px 20px;
-    flex-wrap: wrap;
-}
-
-.Open_menu img {
-    height: 30px;
-    margin: 5px;
-}
-
-.Open_menu button {
-    background-color: #555;
+header {
+    background-color: #333;
     color: white;
-    border: none;
-    padding: 5px 10px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.Open_menu button:hover {
-    background-color: #000;
-}
-
-/* Основной контейнер для карточек */
-.container, .container_2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    text-align: center;
     padding: 20px;
 }
 
-.cart, .item {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 15px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s;
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-.cart:hover {
+.items, .room, .contend, .new_file {
+    margin: 10px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.items img, .room img, .contend img, .new_file img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.items:hover, .room:hover, .contend:hover, .new_file:hover {
     transform: scale(1.05);
 }
 
-.cart img, .item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.price {
-    color: green;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-button {
-    background-color: #007bff;
+.items p, .room p, .contend p, .new_file p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
     color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Таблица */
-#table {
-    overflow-x: auto;
-    padding: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-/* Футер */
-footer {
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.footer-contacts {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-}
-
-.footer-contacts img {
-    height: 30px;
-}
-
-/* Форма обратной связи */
-.feedback-container {
-    padding: 20px;
-    background-color: #eee;
-    max-width: 500px;
-    margin: 20px auto;
-    border-radius: 10px;
-}
-
-.feedback-container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.feedback-container label {
-    margin-top: 10px;
-}
-
-.feedback-container input,
-.feedback-container textarea {
-    padding: 8px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
     border-radius: 5px;
-    border: 1px solid #ccc;
 }
 
 /* Модальное окно */
-.modal {
+.modal1 {
     display: none;
     position: fixed;
-    z-index: 100;
+    
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
     overflow: auto;
-    background-color: rgba(0,0,0,0.6);
+    padding-top: 60px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .modal-content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 10px;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
 }
 
-.close-button {
-    float: right;
-    font-size: 24px;
+.modal1.show {
+    display: block;
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-/* Адаптивность */
-@media screen and (max-width: 768px) {
-    .Open_menu {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.close:hover,
+.close:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+.items img, .room img, .contend img, .new_file img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .cart, .item {
-        width: 90%;
-    }
+.items:hover img, .room:hover img, .contend:hover img, .new_file:hover img {
+    transform: scale(1.1); /* Увеличиваем изображение */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+}
 
-    table, th, td {
-        font-size: 14px;
-    }
+h2, h3, h4, h5 {
+    position: relative;
+    font-size: 2rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
 
-    .footer-contacts {
-        flex-direction: column;
-        align-items: center;
-    }
+h2:hover, h3:hover, h4:hover, h5:hover {
+    color: #ff6347; /* Яркий цвет при наведении */
+}
+
+h2::after, h3::after, h4::after, h5::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #ff6347;
+    bottom: 0;
+    left: 25%;
+    transition: width 0.3s ease;
+}
+
+h2:hover::after, h3:hover::after, h4:hover::after, h5:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.items img, .room img, .contend img, .new_file img {
+    filter: grayscale(50%);
+    transition: filter 0.3s ease;
+}
+
+.items:hover img, .room:hover img, .contend:hover img, .new_file:hover img {
+    filter: grayscale(0%) contrast(120%) brightness(110%);
+}
+/* Начальные стили для тёмной темы */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background-color: #333;
+}
+
+.dark-mode .items, .dark-mode .room, .dark-mode .contend, .dark-mode .new_file {
+    background-color: #444;
 }
