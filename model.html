@@ -136,7 +136,7 @@
   <h2>Регистрация</h2>
   <input type="text" id="username" placeholder="Имя пользователя">
   <input type="password" id="password" placeholder="Пароль">
-  <button onclick="register()">Зарегистрироваться</button>
+  <button onclick="register()">Войти</button>
 
   <script>
     function register() {
@@ -158,7 +158,7 @@
       users[username] = password;
       localStorage.setItem("users", JSON.stringify(users));
 
-      alert("Регистрация прошла успешно! Теперь войдите.");
+      alert("Подтвердите действия.");
       window.location.href = "login.page.html";
     }
   </script>
